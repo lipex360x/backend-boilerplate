@@ -1,5 +1,9 @@
 <h2 align="center">Boilerplate Typescript DDD</h2>
 
+#### :bookmark_tabs: Content Index
+- [Package Scripts](#zap-package-scripts)
+
+---
 
 #### :zap: Package Scripts
 
@@ -47,5 +51,7 @@ yarn test:c testPath
 ```
 yarn build
 ```
+
+:bookmark_tabs: [Go to Content Index](#bookmark_tabs-content-index)
 
 ---
