@@ -34,6 +34,15 @@ yarn orm:revert
 yarn orm:show 
 ```
 
+* TypeORM Seeds CLI
+```
+> Seed Check Config
+yarn seed:config
+
+> Seed Execute
+yarn seed:run
+```
+
 * Jest Test CLI
 ```
 > Execute all Tests
