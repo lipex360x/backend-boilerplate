@@ -3,6 +3,7 @@ import 'reflect-metadata'
 import 'express-async-errors'
 
 import express, { NextFunction, Request, Response } from 'express'
+import cors from 'cors'
 import { errors } from 'celebrate'
 
 import '@shared/containers'
@@ -18,6 +19,7 @@ const app = express()
 
 app.use(express.json())
 app.use(routes)
+app.use(cors())
 
 app.use('/files', express.static(storageConfig.uploadFolder))
 
