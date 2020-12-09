@@ -13,6 +13,8 @@ module.exports = [
 
     logging: false,
 
+    migrations: ['./src/shared/infra/typeorm/migrations/*.{ts,js}'],
+
     entities: ['./src/modules/**/entities/*.{ts,js}'],
     factories: ['./src/shared/infra/typeorm/factories/*.{ts,js}'],
     seeds: ['./src/shared/infra/typeorm/seeds/*.{ts,js}'],
