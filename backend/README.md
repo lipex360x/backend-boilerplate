@@ -18,6 +18,11 @@ yarn dev:server
 yarn start
 ```
 
+* Remove .gitkeep files 
+```
+yarn clean
+```
+
 * TypeORM CLI 
 ```
 > default CLI
