@@ -1,5 +1,8 @@
 <h2 align="center">Boilerplate Typescript DDD</h2>
 
+#### :wrench: Backend Snippets
+[Gist File](https://gist.github.com/lipex360x/d55aec8387c8f4d0a5ab18131e56cd65)
+
 #### :bookmark_tabs: Content Index
 - [Package Scripts](#zap-package-scripts)
 
