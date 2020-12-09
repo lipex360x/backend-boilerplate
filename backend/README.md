@@ -23,6 +23,11 @@ yarn start
 yarn clean
 ```
 
+* Create New Module 
+```
+yarn module
+```
+
 * TypeORM CLI 
 ```
 > default CLI
