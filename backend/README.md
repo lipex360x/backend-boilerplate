@@ -1,4 +1,4 @@
-<h2 align="center">Boilerplate Typescript DDD</h2>
+<h2 align="center">Boilerplate Typescript Backend</h2>
 
 #### :bookmark_tabs: Content Index
 - [Snippets Backend](https://gist.github.com/lipex360x/d55aec8387c8f4d0a5ab18131e56cd65)
