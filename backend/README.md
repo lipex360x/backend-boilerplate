@@ -1,9 +1,12 @@
 <h2 align="center">Boilerplate Typescript Backend</h2>
 
 #### :bookmark_tabs: Content Index
-- [Snippets Backend](https://gist.github.com/lipex360x/d55aec8387c8f4d0a5ab18131e56cd65)
+
+- [Backend VSCode Snippets](https://gist.github.com/lipex360x/d55aec8387c8f4d0a5ab18131e56cd65)
 
 - [Package Scripts](#zap-package-scripts)
+
+:house: [Return to Main Folder](https://github.com/lipex360x/julius)
 
 ---
 
@@ -73,6 +76,8 @@ yarn test:c testPath
 yarn build
 ```
 
-:bookmark_tabs: [Go to Content Index](#bookmark_tabs-content-index)
-
 ---
+
+:point_up_2: [Go to Content Index](#bookmark_tabs-content-index)
+
+
