@@ -1,4 +1,5 @@
 require('dotenv').config()
+const dir = process.env.NODE_DIST === 'dev' ? 'src' : 'dist'
 
 module.exports = [
   {
@@ -13,14 +14,14 @@ module.exports = [
 
     logging: false,
 
-    migrations: ['./src/shared/infra/typeorm/migrations/*.{ts,js}'],
+    migrations: [`./${dir}/shared/infra/typeorm/migrations/*.{ts,js}`],
 
-    entities: ['./src/modules/**/entities/*.{ts,js}'],
-    factories: ['./src/shared/infra/typeorm/factories/*.{ts,js}'],
-    seeds: ['./src/shared/infra/typeorm/seeds/*.{ts,js}'],
+    entities: [`./${dir}/modules/**/entities/*.{ts,js}`],
+    factories: [`./${dir}/shared/infra/typeorm/factories/*.{ts,js}`],
+    seeds: [`./${dir}/shared/infra/typeorm/seeds/*.{ts,js}`],
 
     cli: {
-      migrationsDir: './src/shared/infra/typeorm/migrations'
+      migrationsDir: `./${dir}/shared/infra/typeorm/migrations`
     }
   }
 ]
