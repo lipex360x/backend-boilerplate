@@ -2,10 +2,10 @@ import multer from 'multer'
 import path from 'path'
 import crypt from 'crypto'
 
-const tmpFolder = path.resolve(__dirname, '..', 'tmp')
+const tmpFolder = path.resolve(__dirname, '..', 'tmp', 'uploads')
 export default {
   tmpFolder,
-  uploadFolder: path.resolve(tmpFolder, 'uploads'),
+  uploadFolder: tmpFolder,
 
   storage: multer.diskStorage({
     destination: tmpFolder,
@@ -23,7 +23,7 @@ export default {
 
       const fileText = `${name}.${ext[1]}`
 
-      const fileHash = crypt.randomBytes(10).toString('hex')
+      const fileHash = crypt.randomBytes(10).toString('HEX')
       const fileName = `${fileHash}-${fileText}`
 
       return callback(null, fileName)

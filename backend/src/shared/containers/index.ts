@@ -1,3 +1,3 @@
-// import '@modules/.../repositories'
+// import '@modules/../repositories
 
 import './providers'
