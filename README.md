@@ -1,46 +1,57 @@
-<h2 align="center">Boilerplate Typescript</h2>
+<h2 align="center">Boilerplate Typescript DDD</h2>
 
 #### :bookmark_tabs: Content Index
-
-- [Backend](#zap-backend)
-
-- [Frontend](#)
-
-- [Mobile](#)
+- [Package Scripts](#zap-package-scripts)
 
 ---
 
-#### :zap: Backend
+#### :zap: Package Scripts
 
-* Packages and Tecnologies
-```json
-  Express
-  Typescript
-  TypeORM
-  TDD with JEST
-  DDD with SOLID
-  Validation with Celebrate
+* Start Server 
+```
+> Develop Mode
+yarn dev:server
+
+> Production Mode (after build)
+yarn start
 ```
 
-:rocket: [Go to Backend Folder](https://github.com/lipex360x/boilerplate-typescript/tree/master/backend)
+* TypeORM CLI 
+```
+> default CLI
+yarn orm 
 
----
-#### :zap: Frontend
+> Create a Migration
+yarn orm:create nameMigration 
 
-* Packages and Tecnologies
-```json
-Under Construction
+> Execute Migrations
+yarn orm:run 
+
+> Revert Migration (one to one)
+yarn orm:revert 
+
+> Displays migrations performed
+yarn orm:show 
 ```
 
----
+* Jest Test CLI
+```
+> Execute all Tests
+yarn test
 
-#### :zap: Mobile
+> Execute one specific Test
+yarn test:v testPath
 
-* Packages and Tecnologies
-```json
-Under Construction
+> Clear Test Cache
+yarn test:c testPath
+
 ```
 
----
+* Babel Build
+```
+yarn build
+```
 
-:point_up_2: [Go to Content Index](#bookmark_tabs-content-index)
+:bookmark_tabs: [Go to Content Index](#bookmark_tabs-content-index)
+
+---
