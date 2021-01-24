@@ -1,16 +1,15 @@
 import { Router } from 'express'
 
 import authRoutes from '@shared/middlewares/authRoutes/routes/auth.routes'
-// import module.routes from '@module/.../infra/http/routes/module.routes.ts'
+import usersRoutes from '@modules/users/infra/http/routes/users.routes'
 
 const routes = Router()
-
-// routes.use(module.routes)
 
 routes.get('/', (request, response) => {
   response.json({ message: 'Hello World' })
 })
 
 routes.use('/auth', authRoutes)
+routes.use('/users', usersRoutes)
 
 export default routes

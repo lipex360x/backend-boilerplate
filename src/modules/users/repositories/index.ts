@@ -1,13 +1,13 @@
 import { container } from 'tsyringe'
 
 import IUsersInterface from './interfaces/IUsersRepository'
-import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository'
+import UsersRepository from '../infra/typeorm/repositories/UsersRepository'
 
 const providers = {
-  sqliteDB: UsersRepository
+  users: UsersRepository
 }
 
 container.registerSingleton<IUsersInterface>(
   'UsersRepository',
-  providers.sqliteDB
+  providers.users
 )
