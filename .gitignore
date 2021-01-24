@@ -1,6 +1,10 @@
-ormconfig.js
 .env
+
+ormconfig.js
+docker-compose.yml
 
 node_modules
 coverage
 dist
+
+yarn-error.log

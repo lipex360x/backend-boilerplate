@@ -5,11 +5,11 @@ module.exports = [
   {
     name: 'default',
     
-    // SQLITE
+    // -- SQLITE DB * remove this line *
     // type: 'sqlite',
     // database: `./${dir}/shared/infra/http/typeorm/database.sqlite`,
 
-    // POSTGRES
+    // -- POSTGRES DB * remove this line *
     // type: 'postgres',
     // database: process.env.POSTGRES_DB,
     // host: process.env.POSTGRES_HOST,
@@ -28,5 +28,21 @@ module.exports = [
     cli: {
       migrationsDir: `./${dir}/shared/infra/typeorm/migrations`
     }
-  }
+  },
+
+  // -- MONGODB * remove this line *
+  // {
+    // name: 'mongo',
+    // type: 'mongodb',
+
+    // host: 'localhost',
+    // port: process.env.MONGODB_PORT,
+    // database: process.env.MONGODB_DATABASE,
+
+    // logging: false,
+
+    // useUnifiedTopology: true,
+
+    // entities: ['./src/modules/**/schemas/*.{ts,js}']
+  // }
 ]
