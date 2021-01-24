@@ -22,4 +22,4 @@ services:
     image: redis
     container_name: ${REDIS_CONTAINER_NAME}
     ports:
-      - ${REDIS_CONTAINER_NAME}:6379
+      - ${REDIS_PORT}:6379
