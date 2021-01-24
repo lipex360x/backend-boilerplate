@@ -1,7 +1,7 @@
 services:
   postgresdb:
     image: postgres
-    container_name: ecoleta_postgres
+    container_name: postgres_container
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASS}
