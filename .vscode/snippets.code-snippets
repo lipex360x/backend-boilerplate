@@ -1,7 +1,7 @@
 {
   "Migration Create Table Template": {
-    "prefix": "migrationTable",
-    "body": [
+		"prefix": "migrationTable",
+		"body": [
       "import { MigrationInterface, QueryRunner, Table } from 'typeorm'",
       "",
       "export default class ${1:MigrationName} implements MigrationInterface {",
@@ -14,8 +14,8 @@
       "            name: '${3:TABLE_SINGLE_NAME}_id',",
       "            type: 'uuid',",
       "            isPrimary: true",
-      "          },",
-      "",
+			"          },",
+			"",
       "          {",
       "            name: '${4:COLUMN_NAME}',",
       "            type: '${5|varchar,text,uuid,integer,decimal,boolean|}'",
@@ -25,8 +25,8 @@
       "            name: 'created_at',",
       "            type: 'timestamp with time zone',",
       "            default: 'now()'",
-      "          },",
-      "",
+			"          },",
+			"",
       "          {",
       "            name: 'updated_at',",
       "            type: 'timestamp with time zone',",
@@ -47,14 +47,14 @@
       "  public async down (queryRunner: QueryRunner): Promise<void> {",
       "    await queryRunner.dropTable('${2:TABLE_NAME}')",
       "  }",
-      "}",
-      ""
-    ]
+			"}",
+			"",
+		]
   },
 
   "Migration Column": {
-    "prefix": "migrationColumn",
-    "body": [
+		"prefix": "migrationColumn",
+		"body": [
       "import { MigrationInterface, QueryRunner, TableColumn } from 'typeorm';",
       "",
       "export default class ${1:MigrationName}",
@@ -73,133 +73,135 @@
       "  public async down(queryRunner: QueryRunner): Promise<void> {",
       "    await queryRunner.dropColumn('${2:Table Name}', '${3:Column Name}');",
       "  }",
-      "}"
+      "}",
     ]
   },
 
   "Migration FK Column": {
-    "prefix": "migrationForeignKey",
-    "body": [
-      "import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from 'typeorm'",
-      "",
-      "export default class ${1:MigrationName}",
-      "  implements MigrationInterface {",
-      "  public async up(queryRunner: QueryRunner): Promise<void> {",
-      "",
-      "    await queryRunner.addColumn(",
-      "      '${2:DATABASE_NAME}',",
-      "      new TableColumn({",
-      "        name: '${3:COLUMN_NAME}',",
-      "        type: 'uuid',",
-      "        isNullable: true,",
-      "      })",
-      "    );",
-      "",
-      "    await queryRunner.createForeignKey(",
-      "      '${2:DATABASE_NAME}',",
-      "      new TableForeignKey({",
-      "        name: '${2:DATABASE_NAME}_To_${5:REFERENCE_TABLE}',",
-      "        columnNames: ['${3:COLUMN_NAME}'],",
-      "",
-      "        referencedTableName: '${5:REFERENCE_TABLE}',",
-      "        referencedColumnNames: ['${3:COLUMN_NAME}'],",
-      "",
-      "        onDelete: '${6|CASCADE,SET NULL|}',",
-      "        onUpdate: '${7|CASCADE,SET NULL|}'",
-      "      })",
-      "    )",
-      "  }",
-      "",
-      "  public async down(queryRunner: QueryRunner): Promise<void> {",
-      "    await queryRunner.dropForeignKey('${2:DATABASE_NAME}', '${2:DATABASE_NAME}_To_${5:REFERENCE_TABLE}');",
-      "    await queryRunner.dropColumn('${2:DATABASE_NAME}', '${3:COLUMN_NAME}');",
-      "  }",
-      "}"
+		"prefix": "migrationForeignKey",
+		"body": [
+    "import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from 'typeorm'",
+    "",
+    "export default class ${1:MigrationName}",
+    "  implements MigrationInterface {",
+    "  public async up(queryRunner: QueryRunner): Promise<void> {",
+    "",
+    "    await queryRunner.addColumn(",
+    "      '${2:DATABASE_NAME}',",
+    "      new TableColumn({",
+    "        name: '${3:COLUMN_NAME}',",
+    "        type: 'uuid',",
+    "        isNullable: true,",
+    "      })",
+    "    );",
+    "",
+    "    await queryRunner.createForeignKey(",
+    "      '${2:DATABASE_NAME}',",
+    "      new TableForeignKey({",
+    "        name: '${2:DATABASE_NAME}_To_${5:REFERENCE_TABLE}',",
+    "        columnNames: ['${3:COLUMN_NAME}'],",
+    "",
+    "        referencedTableName: '${5:REFERENCE_TABLE}',",
+    "        referencedColumnNames: ['${3:COLUMN_NAME}'],",
+    "",
+    "        onDelete: '${6|CASCADE,SET NULL|}',",
+    "        onUpdate: '${7|CASCADE,SET NULL|}'",
+    "      })",
+    "    )",
+    "  }",
+    "",
+    "  public async down(queryRunner: QueryRunner): Promise<void> {",
+    "    await queryRunner.dropForeignKey('${2:DATABASE_NAME}', '${2:DATABASE_NAME}_To_${5:REFERENCE_TABLE}');",
+    "    await queryRunner.dropColumn('${2:DATABASE_NAME}', '${3:COLUMN_NAME}');",
+    "  }",
+    "}",
     ]
   },
 
-  "Factory TypeORM Template": {
-    "prefix": "factoryTemplate",
-    "body": [
-      "import Faker from 'faker'",
-      "import { define } from 'typeorm-seeding'",
-      "import ENTITY from '@modules/'",
-      "",
-      "define(ENTITY, (faker: typeof Faker, context: { roles: string[] }) => {",
-      "  const dateCreate = new Date()",
-      "  const entityName = new ENTITY()",
-      "",
-      "   Object.assign(ENTITY, {",
-      "    _id: faker.random.uuid(),",
-      "    property: 'value',",
-      "    created_at: dateCreate,",
-      "    updated_at: dateCreate,",
-      "  })",
-      "",
-      "  return entityName",
-      "})"
-    ]
-  },
+  
+"Factory TypeORM Template": {
+  "prefix": "factoryTemplate",
+  "body": [
+    "import Faker from 'faker'",
+    "import { define } from 'typeorm-seeding'",
+    "import ENTITY from '@modules/'",
+    "",
+    "define(ENTITY, (faker: typeof Faker, context: { roles: string[] }) => {",
+    "  const dateCreate = new Date()",
+    "  const entityName = new ENTITY()",
+    "",
+    "   Object.assign(ENTITY, {",
+    "    _id: faker.random.uuid(),",
+    "    property: 'value',",
+    "    created_at: dateCreate,",
+    "    updated_at: dateCreate,",
+    "  })",
+    "",
+    "  return entityName",
+    "})",
+  ]
+},
 
-  "Seed TypeORM Template": {
-    "prefix": "seedTemplate",
-    "body": [
-      "import { v4 as uuid } from 'uuid'",
-      "import { Factory, Seeder } from 'typeorm-seeding'",
-      "import { Connection } from 'typeorm'",
-      "import ENTITY from '@modules/'",
-      "",
-      "export default class ${1:CLASS_NAME} implements Seeder {",
-      "  public async run (factory: Factory, connection: Connection): Promise<any> {",
-      "    await connection",
-      "      .createQueryBuilder()",
-      "      .insert()",
-      "      .into(ENTITY)",
-      "      .values([",
-      "        { _id: uuid(), property: 'value' },",
-      "      ])",
-      "      .execute()",
-      "  }",
-      "}"
-    ]
-  },
 
-  "Entity Template": {
+"Seed TypeORM Template": {
+  "prefix": "seedTemplate",
+  "body": [
+    "import { v4 as uuid } from 'uuid'",
+    "import { Factory, Seeder } from 'typeorm-seeding'",
+    "import { Connection } from 'typeorm'",
+    "import ENTITY from '@modules/'",
+    "",
+    "export default class ${1:CLASS_NAME} implements Seeder {",
+    "  public async run (factory: Factory, connection: Connection): Promise<any> {",
+    "    await connection",
+    "      .createQueryBuilder()",
+    "      .insert()",
+    "      .into(ENTITY)",
+    "      .values([",
+    "        { _id: uuid(), property: 'value' },",
+    "      ])",
+    "      .execute()",
+    "  }",
+    "}",
+  ]
+},
+	
+	"Entity Template": {
     "prefix": "entityTemplate",
     "body": [
-      "import { v4 as uuid } from 'uuid'",
-      "import {",
-      "  Entity,",
-      "  Column,",
-      "  PrimaryColumn,",
-      "  CreateDateColumn,",
-      "  UpdateDateColumn,",
-      "  BeforeInsert",
-      "} from 'typeorm'",
-      "",
-      "@Entity('${TM_FILENAME_BASE/(.*)/${1:/downcase}/}s')",
-      "export default class $TM_FILENAME_BASE {",
-      "  @PrimaryColumn('uuid')",
-      "  ${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_id: string;",
-      "",
-      "  @Column()",
-      "  name: string;",
-      "",
-      "  @CreateDateColumn()",
-      "  created_at: Date;",
-      "",
-      "  @UpdateDateColumn()",
-      "  updated_at: Date;",
-      "",
-      "  @DeleteDateColumn()",
-      "  deleted_at: Date;",
-      "",
-      "  @BeforeInsert()",
-      "  ${TM_FILENAME_BASE/(.*)/${1:/downcase}/}Props (): void {",
-      "    this.${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_id = uuid()",
-      "  }",
-      "}",
-      ""
+		"import { v4 as uuid } from 'uuid'",
+    "import {",
+    "  Entity,",
+    "  Column,",
+    "  PrimaryColumn,",
+    "  CreateDateColumn,",
+    "  UpdateDateColumn,",
+    "  BeforeInsert",
+    "} from 'typeorm'",
+    "",
+    "@Entity('${TM_FILENAME_BASE/(.*)/${1:/downcase}/}s')",
+    "export default class $TM_FILENAME_BASE {",
+    "  @PrimaryColumn('uuid')",
+    "  ${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_id: string;",
+    "",
+    "  @Column()",
+    "  name: string;",
+    "",
+    "  @CreateDateColumn()",
+    "  created_at: Date;",
+    "",
+    "  @UpdateDateColumn()",
+    "  updated_at: Date;",
+    "",
+    "  @DeleteDateColumn()",
+    "  deleted_at: Date;",
+    "",
+		"  @BeforeInsert()",
+		"  ${TM_FILENAME_BASE/(.*)/${1:/downcase}/}Props (): void {",
+		"    this.${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_id = uuid()",
+		"  }",
+		"}",
+		"",
     ]
   },
 
@@ -212,7 +214,7 @@
       "",
       "@Column('uuid')",
       "${3:Primary_Column_ONE_ENTITY}_id: string;",
-      ""
+      "",
     ]
   },
 
@@ -221,7 +223,7 @@
     "body": [
       "@OneToMany(() => ${1:MANY_ENTITY}, ${2:nickname} => ${2:nickname}.${TM_FILENAME_BASE/(.*)/${1:/downcase}/}, {})",
       "${2:nickname}: ${1:MANY_ENTITY}[]",
-      ""
+      "",
     ]
   },
 
@@ -237,9 +239,10 @@
       "export default interface $TM_FILENAME_BASE {",
       "  create(data: CreateProps): Promise<ENTITY>",
       "}",
-      ""
+      "",
     ]
   },
+
 
   "Fake Repository Template": {
     "prefix": "fakeRepositoryTemplate",
@@ -267,7 +270,7 @@
       "    return entity_data",
       "  }",
       "}",
-      ""
+      "",
     ]
   },
 
@@ -288,10 +291,11 @@
       "",
       "  // Repositories Methods",
       "",
-      "}"
+      "}",
     ]
   },
 
+      
   "Index Container Template": {
     "prefix": "indexContainerTemplate",
     "body": [
@@ -308,10 +312,10 @@
       "  'REPOSITORY',",
       "  providers.${1:nameProvider}",
       ")",
-      ""
+      "",
     ]
   },
-
+  
   "Service Template": {
     "prefix": "serviceTemplate",
     "body": [
@@ -339,7 +343,7 @@
       "    ",
       "  }",
       "}",
-      ""
+      "",
     ]
   },
 
@@ -363,7 +367,7 @@
       "    return response.json(classToClass(serviceFunction))",
       "  }",
       "}",
-      ""
+      "",
     ]
   },
 
@@ -409,7 +413,7 @@
       "  })",
       "",
       "})",
-      ""
+      "",
     ]
-  }
+  },
 }
