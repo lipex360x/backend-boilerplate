@@ -2,11 +2,11 @@ import { Server } from 'socket.io'
 
 export default function (server: any) {
   const io = new Server(server, {
-    allowEIO3: true,
     cors: {
-      origin: process.env.FRONTEND_URL,
+      origin: true,
       credentials: true
-    }
+    },
+    allowEIO3: true
   })
 
   io.on('connection', (client: any) => {
