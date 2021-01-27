@@ -4,7 +4,7 @@ export default function (server: any) {
   const io = new Server(server, {
     allowEIO3: true,
     cors: {
-      origin: 'http://localhost:3000',
+      origin: process.env.FRONTEND_URL,
       credentials: true
     }
   })
