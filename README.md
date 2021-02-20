@@ -1,10 +1,10 @@
 <h2 align="center">XXXXXXXXXXXXXX - API Guide</h2>
 
-#### :bookmark_tabs: Content Index
+### :bookmark_tabs: Content Index
 
 - [Setup](#zap-setup)
 
-- [Package Scripts](#zap-package-scripts)
+- [Package Scripts](#zap-commands)
 
 - [Technologies](#zap-technologies)
 
@@ -12,7 +12,7 @@
 
 ---
 
-#### :zap: Setup
+### :zap: Setup
 
 Clone the main repository, then enter this folder and run `npm i` or `yarn` to install all dependencies.
 
@@ -32,7 +32,7 @@ Check more executable scripts in the `package.json` file and more details of thi
 
 ---
 
-#### :zap: Commands
+### :zap: Commands
 
 * Execute Development and Production Build
 
@@ -57,7 +57,7 @@ Check more executable scripts in the `package.json` file and more details of thi
 
 ---
 
-#### :zap: Technologies
+### :zap: Technologies
 
 ```json
   Express
