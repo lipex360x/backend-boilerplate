@@ -32,56 +32,28 @@ Check more executable scripts in the `package.json` file and more details of thi
 
 ---
 
-#### :zap: Package Scripts
+#### :zap: Commands
 
-* Start Server 
-```
-> Develop Mode
-yarn dev:server
+* Execute Development and Production Build
 
-> Production Mode (after build)
-yarn start
-```
+- `dev:server`: runs your application on `localhost:3333`
+- `build`: creates the production build version
+- `start`: starts a simple server with the build production code
 
 * TypeORM CLI 
-```
-> default CLI
-yarn orm 
 
-> Create a Migration
-yarn orm:create nameMigration 
-
-> Execute Migrations
-yarn orm:run 
-
-> Revert Migration (one to one)
-yarn orm:revert 
-
-> Displays migrations performed
-yarn orm:show 
-
-> Execute Seeds
-yarn seed:run 
-
-```
+- `orm`: execute default TypeORM CLI
+- `orm:create MIGRATION_NAME`: create one migration
+- `orm:run`: execute migrations
+- `orm:revert`: revert migration (one to one)
+- `orm:show`: displays migrations performed
+- `seed:run`: execute seeds
 
 * Jest Test CLI
-```
-> Execute all Tests
-yarn test
 
-> Execute one specific Test
-yarn test:v testPath
-
-> Clear Test Cache
-yarn test:c testPath
-
-```
-
-* Babel Build
-```
-yarn build
-```
+- `test`: execute all tests
+- `test:v TEST_PATH`: execute one specific Test
+- `test:c`: Clear Test Cache
 
 ---
 
