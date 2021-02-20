@@ -4,7 +4,7 @@
 
 - [Setup](#zap-setup)
 
-- [Package Scripts](#zap-commands)
+- [Commands](#zap-commands)
 
 - [Technologies](#zap-technologies)
 
