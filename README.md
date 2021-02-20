@@ -40,6 +40,10 @@ Check more executable scripts in the `package.json` file and more details of thi
 - `build`: creates the production build version
 - `start`: starts a simple server with the build production code
 
+* Generate Modules
+
+- `generate`: execute plopjs and generate one module
+
 * TypeORM CLI 
 
 - `orm`: execute default TypeORM CLI
