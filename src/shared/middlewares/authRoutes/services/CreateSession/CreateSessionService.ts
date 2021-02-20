@@ -33,7 +33,11 @@ export default class CreateSessionService {
 
     if (!isValidPassword) throw new AppError('Combination user/password is wrong', 401)
 
-    const token = sign({ user_id: getUser.user_id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES })
+    const token = sign(
+      { user_id: getUser.user_id },
+      process.env.JWT_SECRET || 'test-api',
+      { expiresIn: process.env.JWT_EXPIRES || '7d' }
+    )
 
     return { user: getUser, token }
   }
