@@ -38,7 +38,7 @@ Check more executable scripts in the `package.json` file and more details of thi
 
 - `dev:server`: runs your application on `localhost:3333`
 - `build`: creates the production build version
-- `start`: starts a simple server with the build production code
+- `start`: starts a server with the build production code
 
 * Generate Modules
 
