@@ -1,1 +1,12 @@
 // snippet: routerTemplate
+import { Router } from 'express'
+
+import CONTROLLER_NAME from '../controllers/CONTROLLER'
+
+const router = Router()
+
+const controllerInstance = new CONTROLLER_NAME()
+
+router.get('/', controllerInstance.function)
+
+export default router
