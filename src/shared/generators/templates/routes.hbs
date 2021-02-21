@@ -1,12 +1,12 @@
 // snippet: routerTemplate
 import { Router } from 'express'
 
-import CONTROLLER_NAME from '../controllers/CONTROLLER'
+import Create{{pascalCase name}}Controller from '../controllers/Create{{pascalCase name}}Controller'
 
 const router = Router()
 
-const controllerInstance = new CONTROLLER_NAME()
+const create{{pascalCase name}}Controller = new Create{{pascalCase name}}Controller()
 
-router.get('/', controllerInstance.function)
+router.post('/', create{{pascalCase name}}Controller.create)
 
 export default router
