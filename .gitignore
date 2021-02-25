@@ -8,3 +8,4 @@ coverage
 dist
 
 yarn-error.log
+yarn.lock
