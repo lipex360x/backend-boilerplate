@@ -73,5 +73,3 @@ Check more executable scripts in the `package.json` file and more details of thi
 ```
 
 :point_up_2: [Go to Content Index](#bookmark_tabs-content-index)
-
----
