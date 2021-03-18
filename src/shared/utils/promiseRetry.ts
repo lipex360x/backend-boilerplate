@@ -45,7 +45,7 @@ export default async function execute ({ maxAttempt, timeToRetry, terminalMessag
       }
       return functionRetry()
     } catch (error) {
-      return this.execute({ maxAttempt, timeToRetry, terminalMessage, functionRetry })
+      return execute({ maxAttempt, timeToRetry, terminalMessage, functionRetry })
     }
   }, timeToRetry)
 
