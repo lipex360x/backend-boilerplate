@@ -8,7 +8,7 @@ const apiServer = app.listen(process.env.API_PORT, () => {
 
 const serverIo = http.createServer(app)
 const socketServer = serverIo.listen(process.env.SOCKET_PORT, () => {
-  console.log(`🙌 Socket startd on port ${process.env.SOCKET_PORT}\n`)
+  console.log(`🙌 Socket started on port ${process.env.SOCKET_PORT}\n`)
   socketIo(socketServer)
 })
 
