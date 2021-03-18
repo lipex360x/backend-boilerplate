@@ -2,16 +2,19 @@ import app from './app'
 import http from 'http'
 import socketIo from '@shared/socket'
 
-const server = http.createServer(app)
+const apiServer = app.listen(process.env.API_PORT, () => {
+  console.log(`\n🚀 API Started on port ${process.env.API_PORT} \n😉 Check Hello Message at ${process.env.API_URL}:${process.env.API_PORT}/hello`)
+})
 
-const setServer = server.listen(3333, () => {
-  console.log('🚀 API Started on port 3333 \n😉 Check Hello Message at http://localhost:3333/hello')
-
-  socketIo(setServer)
+const serverIo = http.createServer(app)
+const socketServer = serverIo.listen(process.env.SOCKET_PORT, () => {
+  console.log(`🙌 Socket iniciado na porta ${process.env.SOCKET_PORT}`)
+  socketIo(socketServer)
 })
 
 process.on('SIGINT', () => {
   console.log('\n🔒 API Stopped')
-  setServer.close()
+  apiServer.close()
+  socketServer.close()
   process.exit()
 })
